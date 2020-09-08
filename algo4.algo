@@ -1,0 +1,21 @@
+ALGORITHM procedure insertionSort( A : array of items )
+VAR
+   int hp;  //holePosition
+   int V; //valueToInsert
+   TAB : ARRAY_OF Integer [length];
+BEGIN
+        FOR i FROM 1 TO TAB.length STEP inclusive  DO
+            /* select value to be inserted */
+            V = TAB[i];
+            hp = i;
+            
+            /*locate hole position for the element to be inserted */
+            WHILE (hp > 0 and TAB[hp-1] > V) DO
+                TAB[hp] = TAB[hp-1];
+                hp = hp -1;      
+                END_WHILE
+                
+            /* insert the number at hole position */
+            TAB[hp] = V;
+        END FOR
+END
